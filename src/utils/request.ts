@@ -6,20 +6,20 @@ const service = axios.create({
 });
 
 service.interceptors.request.use(
-  config => {
+  (config) => {
     return config;
   },
-  error => {
+  (error) => {
     return Promise.reject(error);
   }
 );
 
 service.interceptors.response.use(
-  response => {
+  (response) => {
     const res = response.data;
     return res;
   },
-  error => {
+  (error) => {
     return Promise.reject(error);
   }
 );
