@@ -8,9 +8,7 @@ import React from 'react';
 import { Button } from 'antd';
 
 const Layout = () => {
-  return (
-    <Button>布局</Button>
-  )
-}
+  return <Button>布局</Button>;
+};
 
 export default Layout;
