@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
 import { ConfigProvider } from 'antd';
 import zhCN from 'antd/es/locale/zh_CN';
+import 'antd/dist/antd.less';
 import 'normalize.css/normalize.css';
-import 'antd/dist/antd.css';
-import './index.css';
+import './index.less';
 
 import router from './routes';
 import reportWebVitals from './reportWebVitals';

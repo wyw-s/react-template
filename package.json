@@ -39,6 +39,8 @@
     "http-proxy-middleware": "^2.0.6",
     "identity-obj-proxy": "^3.0.0",
     "less": "^4.1.3",
+    "less-loader": "^11.1.0",
+    "loader-utils": "^3.2.1",
     "mini-css-extract-plugin": "^2.4.5",
     "normalize.css": "^8.0.1",
     "postcss": "^8.4.4",
