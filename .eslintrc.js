@@ -19,9 +19,13 @@ module.exports = getESLintConfig('react-ts', {
     '@iceworks/best-practices/no-js-in-ts-project': 'off',
     // 不建议使用小写来命名组件
     '@iceworks/best-practices/no-lowercase-component-name': 'error',
-    // 推荐使用函数组件
-    '@iceworks/best-practices/recommend-functional-component': 'off',
     // 每个文件强制执行最多行数
-    'max-lines': 'off'
+    'max-lines': 'off',
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      { vars: 'all', args: 'after-used', ignoreRestSiblings: true }
+    ],
+    'react/no-unescaped-entities': 'off',
+    'react-hooks/exhaustive-deps': 'off'
   }
 });

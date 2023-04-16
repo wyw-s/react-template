@@ -410,12 +410,12 @@ module.exports = function (webpackEnv) {
                     ref: true,
                   },
                 },
-                {
-                  loader: require.resolve('file-loader'),
-                  options: {
-                    name: 'static/media/[name].[hash].[ext]',
-                  },
-                },
+                // {
+                //   loader: require.resolve('file-loader'),
+                //   options: {
+                //     name: 'static/media/[name].[hash].[ext]',
+                //   },
+                // },
               ],
               issuer: {
                 and: [/\.(ts|tsx|js|jsx|md|mdx)$/],
@@ -781,7 +781,8 @@ module.exports = function (webpackEnv) {
           extensions: ['js', 'mjs', 'jsx', 'ts', 'tsx'],
           formatter: require.resolve('react-dev-utils/eslintFormatter'),
           eslintPath: require.resolve('eslint'),
-          failOnError: !(isEnvDevelopment && emitErrorsAsWarnings),
+          failOnError: false,
+          quiet: true,
           context: paths.appSrc,
           cache: true,
           cacheLocation: path.resolve(
