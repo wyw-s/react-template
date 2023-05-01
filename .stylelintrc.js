@@ -4,6 +4,7 @@ const { getStylelintConfig } = require('@iceworks/spec');
 module.exports = getStylelintConfig('react', {
   plugins: ['stylelint-less'],
   rules: {
-    'selector-max-id': 1
+    'selector-max-id': 1,
+    'scss/at-rule-no-unknown': [true, { ignoreAtRules: ['/^custom-/'] }]
   }
 });
