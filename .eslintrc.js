@@ -2,6 +2,9 @@ const { getESLintConfig } = require('@iceworks/spec');
 
 // getESLintConfig(rule: 'common'|'rax'|'react'|'vue', customConfig?);
 module.exports = getESLintConfig('react-ts', {
+  globals: {
+    DEPLOY: true
+  },
   rules: {
     // 对象属性尾部禁止加逗号。避免参数是jsx时，导致尾部自动加上逗号（此规则需要和prettierr一致）
     'comma-dangle': ['error', 'never'],

@@ -2,7 +2,9 @@
 
 const fs = require('fs');
 const path = require('path');
+const moment = require('moment');
 const paths = require('./paths');
+const pkg = require(paths.appPackageJson);
 
 // Make sure that including paths.js after env.js will read .env variables.
 delete require.cache[require.resolve('./paths')];
@@ -13,6 +15,13 @@ if (!NODE_ENV) {
     'The NODE_ENV environment variable is required but was not specified.'
   );
 }
+
+const deployInfo = {
+  project: pkg.description,
+  version: pkg.version,
+  branch: process.env.gitBranch,
+  deployDate: moment(new Date()).format('YYYY-MM-DD HH:mm:ss'),
+};
 
 // https://github.com/bkeepers/dotenv#what-other-env-files-can-i-use
 const dotenvFiles = [
@@ -98,7 +107,11 @@ function getClientEnvironment(publicUrl) {
     }, {}),
   };
 
-  return { raw, stringified };
+  const define = {
+    DEPLOY: JSON.stringify(deployInfo),
+  };
+
+  return { raw, stringified, define };
 }
 
 module.exports = getClientEnvironment;
