@@ -1,0 +1,25 @@
+@import '@/common';
+
+@form-upload-cls: ~'@{rt-prefix}-form-upload';
+
+.@{form-upload-cls} {
+  &-draggable-list-item {
+    height: 100%;
+    border-left: 2px dashed rgba(0, 0, 0, 0);
+    border-right: 2px dashed rgba(0, 0, 0, 0);
+
+    .ant-upload-list-item {
+      padding: @yf-padding-xss;
+    }
+  }
+
+  &-draggable-list-item.drop-over-downward {
+    border-right-color: @yf-primary-color;
+  }
+
+  &-draggable-list-item.drop-over-upward {
+    border-left-color: @yf-primary-color;
+  }
+}
+
+

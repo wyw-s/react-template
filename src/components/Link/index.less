@@ -1,0 +1,130 @@
+@import '@/common';
+
+@link-cls: ~'@{rt-prefix}-link';
+
+.@{link-cls} {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-decoration: none;
+  user-select: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  color: initial;
+  width: initial;
+  touch-action: manipulation;
+  font-size: @yf-font-size-base;
+  font-weight: @yf-font-weight-normal;
+  transition: all 0.3s @ease-in-out;
+
+  &:visited,
+  &:active {
+    color: initial;
+  }
+
+  &:hover {
+    color: @primary-color-hover;
+  }
+
+  &.@{link-cls}-underline {
+    &:hover:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 0;
+      bottom: 0;
+      border-bottom: 1px solid @primary-color-hover;
+    }
+  }
+
+  &.@{link-cls}-disabled {
+    color: initial;
+    cursor: not-allowed;
+  }
+
+  &-inner {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    &.@{link-cls}-inner-ellipsis {
+      display: inline-block;
+      width: inherit;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  &-icon {
+    margin-right: @yf-margin-xss;
+  }
+
+  &-ellipsis {
+    max-width: 100%;
+  }
+
+  &-share {
+    position: absolute;
+    right: -20px;
+
+    &:hover {
+      color: @primary-color-hover;
+    }
+  }
+}
+
+.make-status-color-classes(@status, @cssVariableType, @secondCssVariableType, @activeVariableType) {
+  .@{link-cls}.@{link-cls}-@{status} {
+    color: @cssVariableType;
+
+    &:hover {
+      color: @secondCssVariableType;
+    }
+
+    &:active {
+      color: @activeVariableType;
+    }
+
+    &.@{link-cls}-underline {
+      &:hover:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 0;
+        bottom: 0;
+        border-bottom: 1px solid @cssVariableType;
+      }
+    }
+
+    &.@{link-cls}-disabled {
+      color: @secondCssVariableType;
+      cursor: not-allowed;
+    }
+
+    &.@{link-cls}-pseudo-check {
+      cursor: initial;
+      color: initial;
+
+      &:hover {
+        color: initial;
+      }
+    }
+
+    .@{link-cls}-share {
+      &:hover {
+        color: @secondCssVariableType;
+      }
+    }
+  }
+}
+
+.make-status-color-classes(primary, @primary-color, @primary-color-hover, @primary-color-active);
+.make-status-color-classes(success, @success-color, @success-color-hover, @success-color-active);
+.make-status-color-classes(error, @error-color, @error-color-hover, @error-color-active);
+.make-status-color-classes(warning, @warning-color, @warning-color-hover, @warning-color-active);

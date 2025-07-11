@@ -1,0 +1,27 @@
+@import '@/common';
+
+@link-cls: ~'@{rt-prefix}-item';
+
+.@{link-cls} {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &-left {
+    flex: auto;
+    width: 0;
+  }
+
+  &-right {
+    display: flex;
+
+    .ant-space-item {
+      display: flex;
+    }
+
+    &-operator {
+      flex-shrink: 0;
+      width: 24px;
+    }
+  }
+}

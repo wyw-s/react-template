@@ -6,6 +6,8 @@ import zhCN from 'antd/es/locale/zh_CN';
 import 'normalize.css/normalize.css';
 import 'antd/dist/antd.variable.less';
 import './index.less';
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
 import router from './routes';
 import reportWebVitals from './reportWebVitals';
 import GlobalWrapper from '@/components/GlobalWrapper';
@@ -17,11 +19,13 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
     <GlobalWrapper>
-      <ConfigProvider locale={zhCN} componentSize="middle">
-        <EasyModal.Provider>
-          <RouterProvider router={router} />
-        </EasyModal.Provider>
-      </ConfigProvider>
+      <DndProvider backend={HTML5Backend} key="HTML5Backend">
+        <ConfigProvider locale={zhCN} componentSize="middle">
+          <EasyModal.Provider>
+            <RouterProvider router={router} />
+          </EasyModal.Provider>
+        </ConfigProvider>
+      </DndProvider>
     </GlobalWrapper>
   </React.StrictMode>
 );

@@ -1,0 +1,47 @@
+@import '@/common';
+
+@query-filter-cls: ~'@{rt-prefix}-query-filter';
+
+.@{query-filter-cls} {
+  .ant-form-item {
+    margin-bottom: 0;
+  }
+
+  &-extAction {
+    display: flex;
+    flex: auto;
+    justify-content: right;
+    flex-wrap: nowrap;
+    min-width: 25px;
+
+    button {
+      margin-left: 12px;
+    }
+  }
+
+  &-tabs-cover {
+    .ant-tabs-bar {
+      margin: 0;
+      .ant-tabs-tab {
+        padding: 8px 0;
+        margin-right: 32px;
+      }
+      .ant-tabs-tab:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &-more {
+    background: @yf-block-background;
+  }
+  &-level-search {
+    padding: 12px 8px;
+    margin-top: 8px;
+    display: block;
+  }
+  &-hide {
+    display: none;
+    opacity: 0;
+  }
+}

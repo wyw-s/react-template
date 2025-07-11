@@ -191,6 +191,10 @@ module.exports = function (webpackEnv) {
                 // 禁用 sourceMap（生产环境）
                 sourceMap: !isEnvProduction,
                 math: 'always',
+                modifyVars: {
+                  'primary-color': '#5a8c2a',
+                  'root-entry-name': 'variable'
+                },
               }
             },
           }
