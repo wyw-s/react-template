@@ -4,19 +4,25 @@ import { RouterProvider } from 'react-router-dom';
 import { ConfigProvider } from 'antd';
 import zhCN from 'antd/es/locale/zh_CN';
 import 'normalize.css/normalize.css';
-import 'antd/dist/antd.less';
+import 'antd/dist/antd.variable.less';
 import './index.less';
-
 import router from './routes';
 import reportWebVitals from './reportWebVitals';
+import GlobalWrapper from '@/components/GlobalWrapper';
+import EasyModal from '@/components/EasyModal';
+import 'moment/locale/zh-cn';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
 root.render(
   <React.StrictMode>
-    <ConfigProvider locale={zhCN}>
-      <RouterProvider router={router} />
-    </ConfigProvider>
+    <GlobalWrapper>
+      <ConfigProvider locale={zhCN} componentSize="middle">
+        <EasyModal.Provider>
+          <RouterProvider router={router} />
+        </EasyModal.Provider>
+      </ConfigProvider>
+    </GlobalWrapper>
   </React.StrictMode>
 );
 

@@ -5,10 +5,10 @@
  * @Modifed By:
  */
 import React from 'react';
-import { Button } from 'antd';
+import background from '@/assets/img/背景1.jpg';
 
 const Layout = () => {
-  return <Button>布局</Button>;
+  return <img src={background} alt="" />;
 };
 
 export default Layout;

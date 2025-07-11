@@ -73,4 +73,7 @@ declare module '*.module.less' {
   export default classes;
 }
 
+declare module 'rc-util/lib/Dom/css';
+declare module 'rc-util/lib/Dom/addEventListener';
+
 declare const DEPLOY: any;
