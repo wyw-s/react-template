@@ -70,6 +70,7 @@ module.exports = function (proxy, allowedHost) {
       },
     },
     client: {
+      logging: 'none', // 减少控制台日志
       webSocketURL: {
         // Enable custom sockjs pathname for websocket connection to hot reloading server.
         // Enable custom sockjs hostname, pathname and port for websocket connection

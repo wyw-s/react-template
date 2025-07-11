@@ -24,16 +24,16 @@ const publicUrlOrPath = getPublicUrlOrPath(
 const buildPath = process.env.BUILD_PATH || 'build';
 
 const moduleFileExtensions = [
-  'web.mjs',
+  // 'web.mjs',
   'mjs',
-  'web.js',
+  // 'web.js',
   'js',
-  'web.ts',
+  // 'web.ts',
   'ts',
-  'web.tsx',
+  // 'web.tsx',
   'tsx',
   'json',
-  'web.jsx',
+  // 'web.jsx',
   'jsx',
 ];
 

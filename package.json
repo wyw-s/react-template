@@ -5,7 +5,7 @@
   "description": "React 通用模板",
   "scripts": {
     "start": "cross-env gitBranch=$branch node scripts/start.js",
-    "build": "cross-env gitBranch=$branch node scripts/build.js",
+    "build": "cross-env gitBranch=$branch NODE_ENV=production node scripts/build.js",
     "lint": "npm run eslint && npm run stylelint",
     "eslint:lint-staged": "eslint --cache --ext .js,.jsx,.ts,.tsx",
     "prettier:lint-staged": "prettier --write",
@@ -73,6 +73,7 @@
     "stylelint-less": "^1.0.6",
     "tailwindcss": "^3.0.2",
     "terser-webpack-plugin": "^5.2.5",
+    "thread-loader": "^4.0.4",
     "typescript": "^4.4.2",
     "web-vitals": "^2.1.0",
     "webpack": "^5.64.4",
@@ -102,6 +103,9 @@
     "prettier": "2.7.1",
     "stylelint": "14.12.1"
   },
+  "resolutions": {
+    "**/mockjs/commander": "11.0.0"
+  },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,less,css}": [
       "npm run prettier:lint-staged"
@@ -112,5 +116,8 @@
     "src/**/*.{less,css}": [
       "npm run stylelint:lint-staged"
     ]
+  },
+  "engines": {
+    "node": ">=20.19.3"
   }
 }
