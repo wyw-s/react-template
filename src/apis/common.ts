@@ -12,3 +12,22 @@ export const uploadFile = (file: any) => {
     data: formData
   });
 };
+
+export const login = (body: any) => {
+  return Promise.resolve({
+    data: {
+      name: 'admin',
+      ...body
+    },
+    success: true
+  });
+};
+
+export const getUserInfo = () => {
+  return Promise.resolve({
+    data: {
+      name: 'admin'
+    },
+    success: true
+  });
+};

@@ -10,10 +10,10 @@ const router = createBrowserRouter([
     element: WithLoadingCom(lazy(() => import('@/layout'))),
     children: generateRouter(routes)
   },
-  // {
-  //   path: '/login',
-  //   element: WithLoadingCom(lazy(() => import('@/pages/Login')))
-  // }
+  {
+    path: '/login',
+    element: WithLoadingCom(lazy(() => import('@/pages/Login')))
+  },
   {
     path: '*',
     element: WithLoadingCom(lazy(() => import('@/pages/Error/NotFound')))
