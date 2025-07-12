@@ -1,3 +1,4 @@
+import React from 'react';
 import { Navigate, RouteObject } from 'react-router-dom';
 import WithLoadingCom from '@/components/WithLoadingCom';
 
@@ -8,6 +9,7 @@ export interface RouteItem {
   children?: RouteItem[];
   path?: string;
   name?: string;
+  icon?: React.ReactNode;
 }
 
 const generateRouter = (routeList: RouteItem[]): RouteObject[] => {
