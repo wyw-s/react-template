@@ -1,6 +1,8 @@
+import pkg from '../package.json';
+
 const defaultSettings = {
   // 需要同步修改 webpack.config.js 中的 primary-color
-  primaryColor: '#5a8c2a'
+  primaryColor: pkg.config.primaryColor
 };
 
 export const comPrefixCls = 'rt';

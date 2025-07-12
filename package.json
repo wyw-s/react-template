@@ -1,8 +1,11 @@
 {
   "name": "react-template",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "description": "React 通用模板",
+  "config": {
+    "primaryColor": "#fc5531"
+  },
   "scripts": {
     "start": "cross-env gitBranch=$branch node scripts/start.js",
     "build": "cross-env gitBranch=$branch NODE_ENV=production node scripts/build.js",
