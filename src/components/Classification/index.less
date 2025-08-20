@@ -1,0 +1,22 @@
+@import '@/common';
+
+@classification-cls: ~'@{yf-prefix}-classification';
+
+.@{classification-cls} {
+  &-title {
+    font-weight: bold;
+    position: relative;
+    padding: @yf-padding-xss 0;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      height: 16px;
+      left: -8px;
+      border-radius: 4px;
+      margin: 2px 0;
+      background: @yf-primary-color;
+    }
+  }
+}

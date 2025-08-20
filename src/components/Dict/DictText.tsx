@@ -11,7 +11,7 @@ const DictText = (props: DictTextProps) => {
   const { defaultValue, dictkey } = props;
   const items: DictItem[] = jsonParse(sessionStorage[`dict_${dictkey}`]) || [];
 
-  if (!defaultValue) return <React.Fragment>''</React.Fragment>;
+  if (!defaultValue) return <React.Fragment>-</React.Fragment>;
 
   const names: string[] = [];
   if (Array.isArray(defaultValue)) {
